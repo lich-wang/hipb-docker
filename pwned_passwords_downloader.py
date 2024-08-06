@@ -5,8 +5,8 @@ from queue import Queue
 from datetime import datetime
 
 # 设置日志文件和响应目录
-LOG_FILE = "pwnedpasswords_log.txt"
-RESPONSE_DIR = "responses"
+LOG_FILE = "/app/pwnedpasswords_log.txt"  # 使用绝对路径
+RESPONSE_DIR = "/app/responses"  # 使用绝对路径
 
 # 检查日志文件和响应目录是否存在，如果不存在则创建
 if not os.path.exists(LOG_FILE):
@@ -19,10 +19,8 @@ if not os.path.exists(RESPONSE_DIR):
 # 定义一个函数来处理单个哈希前缀
 def process_hash_prefix(queue):
     while not queue.empty():
-        hash_prefix = queue.get()
-        url = f"https://api.pwnedpasswords.com/range/{hash_prefix}"
-
-        # 记录请求开始时间
+        hash_prefix = queue.get().lower()  # 确保前缀为小写
+        url = f"https://api.pwnedpasswords.com/range/{hash_prefix.upper()}"  # API请求使用大写
         request_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         try:
@@ -32,14 +30,12 @@ def process_hash_prefix(queue):
             response_content = response.text
             time_taken = response.elapsed.total_seconds()
 
-            # 将请求开始时间、结束时间、HTTP状态码和耗时记录到日志文件
-            log_entry = (f"Hash Prefix: {hash_prefix}, Request Time: {request_time}, "
+            log_entry = (f"Hash Prefix: {hash_prefix.upper()}, Request Time: {request_time}, "
                          f"Response Time: {response_time}, HTTP Code: {http_code}, "
                          f"Time Taken: {time_taken} seconds\n")
             with open(LOG_FILE, 'a') as log_file:
                 log_file.write(log_entry)
 
-            # 将响应内容保存到单独的文件中
             response_file = os.path.join(RESPONSE_DIR, f"response_{hash_prefix}.txt")
             with open(response_file, 'w') as file:
                 file.write(response_content)
@@ -52,8 +48,6 @@ def process_hash_prefix(queue):
 # 生成前100个哈希前缀
 def generate_hash_prefixes():
     for i in range(100):  # 仅生成前100个前缀
-#   for i in range(0x00000, 0x100000):  # 生成从0x00000到0xFFFFF的所有前缀
-
         yield f"{i:05X}"
 
 def main():
