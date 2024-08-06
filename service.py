@@ -13,16 +13,19 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
             filepath = os.path.join(DIRECTORY, filename)
             print(f"Looking for file: {filepath}")  # 调试输出
             if os.path.exists(filepath):
+                print(f"Found file: {filepath}")  # 调试输出
                 self.send_response(200)
                 self.send_header("Content-type", "text/plain")
                 self.end_headers()
                 with open(filepath, "rb") as file:
                     self.wfile.write(file.read())
             else:
+                print(f"File not found: {filepath}")  # 调试输出
                 self.send_response(404)
                 self.end_headers()
                 self.wfile.write(b"Prefix not found")
         else:
+            print(f"Invalid endpoint: {self.path}")  # 调试输出
             self.send_response(404)
             self.end_headers()
             self.wfile.write(b"Invalid endpoint")

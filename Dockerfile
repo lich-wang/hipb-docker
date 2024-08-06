@@ -18,3 +18,7 @@ EXPOSE 8000
 
 # 启动HTTP服务
 CMD ["python", "service.py"]
+
+
+#sudo docker pull lichwang/pwnedpasswords
+#sudo docker run -d -p 8000:8000 lichwang/pwnedpasswords
