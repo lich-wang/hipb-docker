@@ -4,12 +4,11 @@ FROM python:3.10-slim
 # 设置工作目录
 WORKDIR /app
 
-# 复制下载脚本、服务脚本和离线包到工作目录
+# 复制下载脚本和服务脚本到工作目录
 COPY pwned_passwords_downloader.py service.py ./
-COPY requests-*.whl ./
 
-# 安装离线包
-RUN pip install requests-*.whl
+# 安装所需的Python包
+RUN pip install requests
 
 # 运行下载脚本以下载文件
 RUN python pwned_passwords_downloader.py
