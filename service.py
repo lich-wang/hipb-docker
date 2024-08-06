@@ -11,6 +11,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
             prefix = self.path.split("/range/")[1].upper()
             filename = f"response_{prefix}.txt"
             filepath = os.path.join(DIRECTORY, filename)
+            print(f"Looking for file: {filepath}")  # 调试输出
             if os.path.exists(filepath):
                 self.send_response(200)
                 self.send_header("Content-type", "text/plain")
@@ -26,6 +27,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b"Invalid endpoint")
 
+print(f"Changing directory to: {DIRECTORY}")  # 调试输出
 os.chdir(DIRECTORY)
 handler = CustomHandler
 
