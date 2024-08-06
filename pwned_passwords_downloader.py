@@ -3,6 +3,7 @@ import requests
 import threading
 from queue import Queue
 from datetime import datetime
+import sys
 
 # 设置日志文件和响应目录
 LOG_FILE = "/app/pwnedpasswords_log.txt"  # 使用绝对路径
@@ -45,15 +46,15 @@ def process_hash_prefix(queue):
 
         queue.task_done()
 
-# 生成前100个哈希前缀
-def generate_hash_prefixes():
-    for i in range(100):  # 仅生成前100个前缀
+# 生成指定数量的哈希前缀
+def generate_hash_prefixes(limit):
+    for i in range(limit):
         yield f"{i:05X}"
 
-def main():
+def main(limit):
     # 创建一个队列并将所有哈希前缀放入其中
     queue = Queue()
-    for prefix in generate_hash_prefixes():
+    for prefix in generate_hash_prefixes(limit):
         queue.put(prefix)
 
     # 启动多个线程来处理队列中的哈希前缀
@@ -68,4 +69,5 @@ def main():
         thread.join()
 
 if __name__ == "__main__":
-    main()
+    limit = int(sys.argv[1]) if len(sys.argv) > 1 else 1000000
+    main(limit)

@@ -6,7 +6,7 @@ on:
       - main  # 仅在推送到main分支时触发构建
 
 jobs:
-  build:
+  build-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,12 +22,43 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build and push Docker image
+    - name: Build and push Docker image for test
       uses: docker/build-push-action@v2
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/pwnedpasswords:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/pwnedpasswords:100test
+        build-args: |
+          LIMIT=100
+
+    - name: Log out from Docker Hub
+      run: docker logout
+
+  build-full:
+    runs-on: ubuntu-latest
+    needs: build-test
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build and push Docker image for full
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: ${{ secrets.DOCKER_USERNAME }}/pwnedpasswords:full
+        build-args: |
+          LIMIT=1000000
 
     - name: Log out from Docker Hub
       run: docker logout
