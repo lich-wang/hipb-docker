@@ -4,11 +4,12 @@ FROM python:3.10-slim AS builder
 # 设置工作目录
 WORKDIR /app
 
-# 复制下载脚本和服务脚本到工作目录
+# 复制下载的依赖包到工作目录
+COPY dependencies /app/dependencies
 COPY pwned_passwords_downloader.py service.py ./
 
 # 安装所需的Python包
-RUN --network=host pip install aiohttp requests fastapi uvicorn
+RUN pip install --no-index --find-links=dependencies aiohttp requests fastapi uvicorn
 
 # 运行下载脚本以下载文件，默认下载所有
 ARG LIMIT=1000000
@@ -24,7 +25,7 @@ WORKDIR /app
 COPY --from=builder /app /app
 
 # 再次安装所需的Python包
-RUN --network=host pip install fastapi uvicorn
+RUN pip install --no-index --find-links=dependencies fastapi uvicorn
 
 # 暴露服务端口
 EXPOSE 8000

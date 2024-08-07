@@ -1,22 +1,24 @@
 import os
-from aiohttp import web
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
+
+app = FastAPI()
 
 DIRECTORY = "/app/responses"  # 确保此目录存在
 
-async def handle(request):
-    path = request.match_info.get('prefix', "").lower()
-    filename = f"response_{path}.txt"
+@app.get("/range/{prefix}")
+async def handle(prefix: str):
+    prefix = prefix.lower()
+    filename = f"response_{prefix}.txt"
     filepath = os.path.join(DIRECTORY, filename)
     print(f"Looking for file: {filepath}")
     if os.path.exists(filepath):
         print(f"Found file: {filepath}")
-        return web.FileResponse(filepath)
+        return FileResponse(filepath)
     else:
         print(f"File not found: {filepath}")
-        return web.Response(text="Prefix not found", status=404)
-
-app = web.Application()
-app.router.add_get('/range/{prefix}', handle)
+        raise HTTPException(status_code=404, detail="Prefix not found")
 
 if __name__ == '__main__':
-    web.run_app(app, port=8000)
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)

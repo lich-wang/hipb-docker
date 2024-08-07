@@ -59,7 +59,7 @@ def main(limit):
 
     # 启动多个线程来处理队列中的哈希前缀
     threads = []
-    for _ in range(8):  # 8个线程，可以根据需要调整
+    for _ in range(64):  # 8个线程，可以根据需要调整
         thread = threading.Thread(target=process_hash_prefix, args=(queue,))
         thread.start()
         threads.append(thread)
