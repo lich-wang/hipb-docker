@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# 定义日志文件
+LOG_FILE="deploy.log"
+exec > >(tee -i $LOG_FILE)
+exec 2>&1
+
 # 远端服务器信息
 REMOTE_SERVER="root@49.234.185.20"
 REMOTE_DIR="/root/pwnedpasswords"
@@ -8,6 +13,20 @@ REMOTE_DIR="/root/pwnedpasswords"
 IMAGE_NAME="python:3.10-slim"
 IMAGE_TAR="python-3.10-slim.tar"
 DEPENDENCIES_TAR="pwnedpasswords-dependencies.tar.gz"
+
+# 清理远程服务器上的空间
+echo "Cleaning up space on remote server..."
+ssh $REMOTE_SERVER << EOF
+  set -e
+  docker system prune -f
+  docker volume prune -f
+  rm -rf $REMOTE_DIR
+EOF
+
+if [ $? -ne 0 ]; then
+  echo "Failed to clean up space on remote server. Exiting."
+  exit 1
+fi
 
 # 确保Docker镜像已被拉取
 echo "Pulling Docker image..."
@@ -57,10 +76,11 @@ ssh $REMOTE_SERVER << EOF
   cd $REMOTE_DIR
   sudo docker load -i $IMAGE_TAR
   sudo docker build -f Dockerfile.remote -t pwnedpasswords-service .
-  sudo docker run -d -p 8000:8000 pwnedpasswords-service
+
+  # 使用 nohup 运行耗时的下载脚本，确保不会因SSH断开而中止
+  nohup sudo docker run -d -p 8000:8000 pwnedpasswords-service > pwnedpasswords-service.log 2>&1 &
 EOF
 
-# 检查是否执行成功
 if [ $? -ne 0 ]; then
   echo "Failed to set up Docker container on remote server. Exiting."
   exit 1

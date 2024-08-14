@@ -11,7 +11,7 @@ COPY pwned_passwords_downloader.py service.py ./
 RUN --network=host pip install aiohttp requests fastapi uvicorn
 
 # 运行下载脚本以下载文件，默认下载所有
-ARG LIMIT=1000000
+ARG LIMIT=1000
 RUN python pwned_passwords_downloader.py $LIMIT
 
 # 使用一个更小的基础镜像
