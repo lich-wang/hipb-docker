@@ -3,25 +3,14 @@
 # 确保脚本在发生错误时退出
 set -e
 
-# 设置默认构建类型为test
-BUILD_TYPE=${1:-test}
+# 设置Docker镜像名称和标签
 IMAGE_NAME="pwnedpasswords"
+TAG="live"
 PORT=8000
 
-if [ "$BUILD_TYPE" == "test" ]; then
-  TAG="100test"
-  LIMIT=100
-elif [ "$BUILD_TYPE" == "full" ]; then
-  TAG="full"
-  LIMIT=1000000
-else
-  echo "Invalid build type: $BUILD_TYPE. Use 'test' or 'full'."
-  exit 1
-fi
-
 # 构建Docker镜像
-echo "Building Docker image for $BUILD_TYPE..."
-docker build --build-arg LIMIT=${LIMIT} --network=host -t ${IMAGE_NAME}:${TAG} .
+echo "Building Docker image with tag ${TAG}..."
+docker build --network=host -t ${IMAGE_NAME}:${TAG} .
 
 # 检查并停止运行的同名容器
 if [ "$(docker ps -aq -f name=${IMAGE_NAME})" ]; then

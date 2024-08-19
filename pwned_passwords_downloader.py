@@ -4,6 +4,9 @@ import threading
 from queue import Queue
 from datetime import datetime
 import sys
+import time
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
 
 # 设置日志文件和响应目录
 LOG_FILE = "/app/pwnedpasswords_log.txt"  # 使用绝对路径
@@ -17,6 +20,20 @@ if not os.path.exists(LOG_FILE):
 if not os.path.exists(RESPONSE_DIR):
     os.makedirs(RESPONSE_DIR)
 
+# 定义请求函数，添加重试和超时机制
+def fetch_with_retry(url):
+    session = requests.Session()
+    retry = Retry(
+        total=5,  # 重试次数
+        backoff_factor=1,  # 重试之间的等待时间，指数增加
+        status_forcelist=[429, 500, 502, 503, 504]  # 针对哪些状态码进行重试
+    )
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount('http://', adapter)
+    session.mount('https://', adapter)
+
+    return session.get(url, timeout=2)  # 设置请求超时时间为10秒
+
 # 定义一个函数来处理单个哈希前缀
 def process_hash_prefix(queue):
     while not queue.empty():
@@ -25,7 +42,7 @@ def process_hash_prefix(queue):
         request_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         try:
-            response = requests.get(url)
+            response = fetch_with_retry(url)
             response_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             http_code = response.status_code
             response_content = response.text
@@ -59,7 +76,7 @@ def main(limit):
 
     # 启动多个线程来处理队列中的哈希前缀
     threads = []
-    for _ in range(64):  # 8个线程，可以根据需要调整
+    for _ in range(32):  # 32个线程，可以根据需要调整
         thread = threading.Thread(target=process_hash_prefix, args=(queue,))
         thread.start()
         threads.append(thread)
