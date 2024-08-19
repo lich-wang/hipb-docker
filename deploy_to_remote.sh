@@ -9,18 +9,23 @@ exec 2>&1
 REMOTE_SERVER="root@49.234.185.20"
 REMOTE_DIR="/root/pwnedpasswords"
 
-# 基础镜像和依赖包名称
-IMAGE_NAME="python:3.10-slim"
-IMAGE_TAR="python-3.10-slim.tar"
-DEPENDENCIES_TAR="pwnedpasswords-dependencies.tar.gz"
+# 镜像和tar文件
+IMAGE_NAME="pwnedpasswords:live"
+IMAGE_TAR="pwnedpasswords_live.tar"
+
+# 端口
+PORT=8000
 
 # 清理远程服务器上的空间
 echo "Cleaning up space on remote server..."
 ssh $REMOTE_SERVER << EOF
   set -e
+  docker stop pwnedpasswords_service || true
+  docker rm pwnedpasswords_service || true
   docker system prune -f
   docker volume prune -f
   rm -rf $REMOTE_DIR
+  fuser -k $PORT/tcp || true
 EOF
 
 if [ $? -ne 0 ]; then
@@ -28,57 +33,32 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# 确保Docker镜像已被拉取
-echo "Pulling Docker image..."
-sudo docker pull $IMAGE_NAME
-
-# 保存基础镜像为tar文件
+# 保存本地Docker镜像为tar文件
 echo "Saving Docker image to tar file..."
 sudo docker save -o $IMAGE_TAR $IMAGE_NAME
 
-# 检查是否保存成功
+# 修改文件权限，以确保用户能够传输文件
+sudo chmod 644 $IMAGE_TAR
+
+# 传输Docker镜像到远端服务器
+echo "Transferring Docker image to remote server..."
+scp $IMAGE_TAR $REMOTE_SERVER:/root
+
 if [ $? -ne 0 ]; then
-  echo "Failed to save Docker image. Exiting."
+  echo "Failed to transfer Docker image. Exiting."
   exit 1
 fi
 
-# 下载依赖包
-echo "Downloading dependencies..."
-mkdir -p dependencies
-pip download -d dependencies aiohttp requests fastapi uvicorn
-
-# 打包依赖包和脚本
-echo "Creating tarball of dependencies and scripts..."
-sudo tar czvf $DEPENDENCIES_TAR dependencies pwned_passwords_downloader.py service.py Dockerfile.remote $IMAGE_TAR
-
-# 检查是否打包成功
-if [ $? -ne 0 ]; then
-  echo "Failed to create tarball. Exiting."
-  exit 1
-fi
-
-# 传输文件到远端服务器
-echo "Transferring files to remote server..."
-scp $DEPENDENCIES_TAR $REMOTE_SERVER:/root
-
-# 检查是否传输成功
-if [ $? -ne 0 ]; then
-  echo "Failed to transfer files to remote server. Exiting."
-  exit 1
-fi
-
-# 在远端服务器上解压、加载镜像并构建Docker容器
+# 在远端服务器上加载镜像并运行容器
 echo "Connecting to remote server and setting up Docker container..."
 ssh $REMOTE_SERVER << EOF
   set -e
   mkdir -p $REMOTE_DIR
-  tar xzvf /root/$DEPENDENCIES_TAR -C $REMOTE_DIR
-  cd $REMOTE_DIR
-  sudo docker load -i $IMAGE_TAR
-  sudo docker build -f Dockerfile.remote -t pwnedpasswords-service .
-
-  # 使用 nohup 运行耗时的下载脚本，确保不会因SSH断开而中止
-  nohup sudo docker run -d -p 8000:8000 pwnedpasswords-service > pwnedpasswords-service.log 2>&1 &
+  docker load -i /root/$IMAGE_TAR
+  docker volume create pwnedpasswords_responses
+  docker stop pwnedpasswords_service || true
+  docker rm pwnedpasswords_service || true
+  docker run -d --name pwnedpasswords_service -p $PORT:8000 -v pwnedpasswords_responses:/app/responses pwnedpasswords:live
 EOF
 
 if [ $? -ne 0 ]; then
@@ -86,8 +66,8 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# 清理临时文件
+# 清理本地临时文件
 echo "Cleaning up..."
-rm -rf dependencies $IMAGE_TAR $DEPENDENCIES_TAR
+rm -f $IMAGE_TAR
 
 echo "Deployment completed successfully."

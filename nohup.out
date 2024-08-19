@@ -1,0 +1,627 @@
+Cleaning up space on remote server...
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Failed to clean up space on remote server. Exiting.
+Cleaning up space on remote server...
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Total reclaimed space: 0B
+Total reclaimed space: 0B
+Pulling Docker image...
+sudo: unable to read password: Input/output error
+sudo: a password is required
+Cleaning up space on remote server...
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Last failed login: Wed Aug 14 21:32:09 CST 2024 from 117.73.13.106 on ssh:notty
+There were 2 failed login attempts since the last successful login.
+Total reclaimed space: 0B
+Total reclaimed space: 0B
+Pulling Docker image...
+sudo: unable to read password: Input/output error
+sudo: a password is required
+Cleaning up space on remote server...
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Last failed login: Wed Aug 14 21:32:09 CST 2024 from 117.73.13.106 on ssh:notty
+There were 2 failed login attempts since the last successful login.
+Total reclaimed space: 0B
+Total reclaimed space: 0B
+Pulling Docker image...
+3.10-slim: Pulling from library/python
+Digest: sha256:8666a639a54acc810408e505e2c6b46b50834385701675ee177f578b3d2fdef9
+Status: Image is up to date for python:3.10-slim
+docker.io/library/python:3.10-slim
+Saving Docker image to tar file...
+Downloading dependencies...
+Collecting aiohttp
+  File was already downloaded /home/linux/hipb-docker/dependencies/aiohttp-3.10.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+Collecting requests
+  File was already downloaded /home/linux/hipb-docker/dependencies/requests-2.32.3-py3-none-any.whl
+Collecting fastapi
+  File was already downloaded /home/linux/hipb-docker/dependencies/fastapi-0.112.0-py3-none-any.whl
+Collecting uvicorn
+  File was already downloaded /home/linux/hipb-docker/dependencies/uvicorn-0.30.6-py3-none-any.whl
+Collecting multidict<7.0,>=4.5
+  File was already downloaded /home/linux/hipb-docker/dependencies/multidict-6.0.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+Collecting aiosignal>=1.1.2
+  File was already downloaded /home/linux/hipb-docker/dependencies/aiosignal-1.3.1-py3-none-any.whl
+Collecting frozenlist>=1.1.1
+  File was already downloaded /home/linux/hipb-docker/dependencies/frozenlist-1.4.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+Collecting aiohappyeyeballs>=2.3.0
+  File was already downloaded /home/linux/hipb-docker/dependencies/aiohappyeyeballs-2.3.5-py3-none-any.whl
+Collecting async-timeout<5.0,>=4.0
+  File was already downloaded /home/linux/hipb-docker/dependencies/async_timeout-4.0.3-py3-none-any.whl
+Collecting yarl<2.0,>=1.0
+  File was already downloaded /home/linux/hipb-docker/dependencies/yarl-1.9.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+Collecting attrs>=17.3.0
+  File was already downloaded /home/linux/hipb-docker/dependencies/attrs-24.2.0-py3-none-any.whl
+Collecting urllib3<3,>=1.21.1
+  File was already downloaded /home/linux/hipb-docker/dependencies/urllib3-2.2.2-py3-none-any.whl
+Collecting charset-normalizer<4,>=2
+  File was already downloaded /home/linux/hipb-docker/dependencies/charset_normalizer-3.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+Collecting idna<4,>=2.5
+  File was already downloaded /home/linux/hipb-docker/dependencies/idna-3.7-py3-none-any.whl
+Collecting certifi>=2017.4.17
+  File was already downloaded /home/linux/hipb-docker/dependencies/certifi-2024.7.4-py3-none-any.whl
+Collecting pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4
+  File was already downloaded /home/linux/hipb-docker/dependencies/pydantic-2.8.2-py3-none-any.whl
+Collecting starlette<0.38.0,>=0.37.2
+  File was already downloaded /home/linux/hipb-docker/dependencies/starlette-0.37.2-py3-none-any.whl
+Collecting typing-extensions>=4.8.0
+  File was already downloaded /home/linux/hipb-docker/dependencies/typing_extensions-4.12.2-py3-none-any.whl
+Collecting click>=7.0
+  File was already downloaded /home/linux/hipb-docker/dependencies/click-8.1.7-py3-none-any.whl
+Collecting h11>=0.8
+  File was already downloaded /home/linux/hipb-docker/dependencies/h11-0.14.0-py3-none-any.whl
+Collecting pydantic-core==2.20.1
+  File was already downloaded /home/linux/hipb-docker/dependencies/pydantic_core-2.20.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+Collecting annotated-types>=0.4.0
+  File was already downloaded /home/linux/hipb-docker/dependencies/annotated_types-0.7.0-py3-none-any.whl
+Collecting anyio<5,>=3.4.0
+  File was already downloaded /home/linux/hipb-docker/dependencies/anyio-4.4.0-py3-none-any.whl
+Collecting exceptiongroup>=1.0.2
+  File was already downloaded /home/linux/hipb-docker/dependencies/exceptiongroup-1.2.2-py3-none-any.whl
+Collecting sniffio>=1.1
+  File was already downloaded /home/linux/hipb-docker/dependencies/sniffio-1.3.1-py3-none-any.whl
+Successfully downloaded aiohttp requests fastapi uvicorn aiohappyeyeballs aiosignal async-timeout attrs certifi charset-normalizer click frozenlist h11 idna multidict pydantic pydantic-core starlette typing-extensions urllib3 yarl annotated-types anyio exceptiongroup sniffio
+Creating tarball of dependencies and scripts...
+dependencies/
+dependencies/attrs-24.2.0-py3-none-any.whl
+dependencies/idna-3.7-py3-none-any.whl
+dependencies/aiohttp-3.10.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/multidict-6.0.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/sniffio-1.3.1-py3-none-any.whl
+dependencies/pydantic-2.8.2-py3-none-any.whl
+dependencies/uvicorn-0.30.5-py3-none-any.whl
+dependencies/yarl-1.9.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/annotated_types-0.7.0-py3-none-any.whl
+dependencies/h11-0.14.0-py3-none-any.whl
+dependencies/starlette-0.37.2-py3-none-any.whl
+dependencies/typing_extensions-4.12.2-py3-none-any.whl
+dependencies/click-8.1.7-py3-none-any.whl
+dependencies/pydantic_core-2.20.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/charset_normalizer-3.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/aiohttp-3.10.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/certifi-2024.7.4-py3-none-any.whl
+dependencies/anyio-4.4.0-py3-none-any.whl
+dependencies/exceptiongroup-1.2.2-py3-none-any.whl
+dependencies/attrs-24.1.0-py3-none-any.whl
+dependencies/aiohappyeyeballs-2.3.5-py3-none-any.whl
+dependencies/uvicorn-0.30.6-py3-none-any.whl
+dependencies/frozenlist-1.4.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/aiohappyeyeballs-2.3.4-py3-none-any.whl
+dependencies/fastapi-0.112.0-py3-none-any.whl
+dependencies/aiosignal-1.3.1-py3-none-any.whl
+dependencies/urllib3-2.2.2-py3-none-any.whl
+dependencies/async_timeout-4.0.3-py3-none-any.whl
+dependencies/requests-2.32.3-py3-none-any.whl
+pwned_passwords_downloader.py
+service.py
+Dockerfile.remote
+python-3.10-slim.tar
+Transferring files to remote server...
+Connecting to remote server and setting up Docker container...
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Last failed login: Wed Aug 14 21:32:09 CST 2024 from 117.73.13.106 on ssh:notty
+There were 2 failed login attempts since the last successful login.
+dependencies/
+dependencies/attrs-24.2.0-py3-none-any.whl
+dependencies/idna-3.7-py3-none-any.whl
+dependencies/aiohttp-3.10.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/multidict-6.0.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/sniffio-1.3.1-py3-none-any.whl
+dependencies/pydantic-2.8.2-py3-none-any.whl
+dependencies/uvicorn-0.30.5-py3-none-any.whl
+dependencies/yarl-1.9.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/annotated_types-0.7.0-py3-none-any.whl
+dependencies/h11-0.14.0-py3-none-any.whl
+dependencies/starlette-0.37.2-py3-none-any.whl
+dependencies/typing_extensions-4.12.2-py3-none-any.whl
+dependencies/click-8.1.7-py3-none-any.whl
+dependencies/pydantic_core-2.20.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/charset_normalizer-3.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/aiohttp-3.10.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/certifi-2024.7.4-py3-none-any.whl
+dependencies/anyio-4.4.0-py3-none-any.whl
+dependencies/exceptiongroup-1.2.2-py3-none-any.whl
+dependencies/attrs-24.1.0-py3-none-any.whl
+dependencies/aiohappyeyeballs-2.3.5-py3-none-any.whl
+dependencies/uvicorn-0.30.6-py3-none-any.whl
+dependencies/frozenlist-1.4.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/aiohappyeyeballs-2.3.4-py3-none-any.whl
+dependencies/fastapi-0.112.0-py3-none-any.whl
+dependencies/aiosignal-1.3.1-py3-none-any.whl
+dependencies/urllib3-2.2.2-py3-none-any.whl
+dependencies/async_timeout-4.0.3-py3-none-any.whl
+dependencies/requests-2.32.3-py3-none-any.whl
+pwned_passwords_downloader.py
+service.py
+Dockerfile.remote
+python-3.10-slim.tar
+Loaded image: python:3.10-slim
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.remote
+#1 transferring dockerfile: 907B done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/python:3.10-slim
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context:
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [builder 1/6] FROM docker.io/library/python:3.10-slim
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 6.97MB 0.1s done
+#5 DONE 0.2s
+
+#6 [builder 2/6] WORKDIR /app
+#6 DONE 0.1s
+
+#7 [builder 3/6] COPY dependencies /app/dependencies
+#7 DONE 0.1s
+
+#8 [builder 4/6] COPY pwned_passwords_downloader.py service.py ./
+#8 DONE 0.1s
+
+#9 [builder 5/6] RUN pip install --no-index --find-links=dependencies aiohttp requests fastapi uvicorn
+#9 3.179 Looking in links: dependencies
+#9 3.216 Processing ./dependencies/aiohttp-3.10.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+#9 3.246 Processing ./dependencies/requests-2.32.3-py3-none-any.whl
+#9 3.266 Processing ./dependencies/fastapi-0.112.0-py3-none-any.whl
+#9 3.286 Processing ./dependencies/uvicorn-0.30.6-py3-none-any.whl
+#9 3.329 Processing ./dependencies/yarl-1.9.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+#9 3.350 Processing ./dependencies/frozenlist-1.4.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+#9 3.370 Processing ./dependencies/multidict-6.0.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+#9 3.391 Processing ./dependencies/attrs-24.2.0-py3-none-any.whl
+#9 3.411 Processing ./dependencies/aiohappyeyeballs-2.3.5-py3-none-any.whl
+#9 3.430 Processing ./dependencies/aiosignal-1.3.1-py3-none-any.whl
+#9 3.450 Processing ./dependencies/async_timeout-4.0.3-py3-none-any.whl
+#9 3.481 Processing ./dependencies/urllib3-2.2.2-py3-none-any.whl
+#9 3.504 Processing ./dependencies/idna-3.7-py3-none-any.whl
+#9 3.521 Processing ./dependencies/certifi-2024.7.4-py3-none-any.whl
+#9 3.541 Processing ./dependencies/charset_normalizer-3.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+#9 3.611 Processing ./dependencies/typing_extensions-4.12.2-py3-none-any.whl
+#9 3.620 Processing ./dependencies/pydantic-2.8.2-py3-none-any.whl
+#9 3.642 Processing ./dependencies/starlette-0.37.2-py3-none-any.whl
+#9 3.683 Processing ./dependencies/h11-0.14.0-py3-none-any.whl
+#9 3.709 Processing ./dependencies/click-8.1.7-py3-none-any.whl
+#9 3.848 Processing ./dependencies/pydantic_core-2.20.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+#9 3.870 Processing ./dependencies/annotated_types-0.7.0-py3-none-any.whl
+#9 3.897 Processing ./dependencies/anyio-4.4.0-py3-none-any.whl
+#9 3.960 Processing ./dependencies/sniffio-1.3.1-py3-none-any.whl
+#9 3.975 Processing ./dependencies/exceptiongroup-1.2.2-py3-none-any.whl
+#9 4.240 Installing collected packages: urllib3, typing-extensions, sniffio, multidict, idna, h11, frozenlist, exceptiongroup, click, charset-normalizer, certifi, attrs, async-timeout, annotated-types, aiohappyeyeballs, yarl, uvicorn, requests, pydantic-core, anyio, aiosignal, starlette, pydantic, aiohttp, fastapi
+#9 5.909 Successfully installed aiohappyeyeballs-2.3.5 aiohttp-3.10.3 aiosignal-1.3.1 annotated-types-0.7.0 anyio-4.4.0 async-timeout-4.0.3 attrs-24.2.0 certifi-2024.7.4 charset-normalizer-3.3.2 click-8.1.7 exceptiongroup-1.2.2 fastapi-0.112.0 frozenlist-1.4.1 h11-0.14.0 idna-3.7 multidict-6.0.5 pydantic-2.8.2 pydantic-core-2.20.1 requests-2.32.3 sniffio-1.3.1 starlette-0.37.2 typing-extensions-4.12.2 urllib3-2.2.2 uvicorn-0.30.6 yarl-1.9.4
+#9 5.909 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#9 DONE 6.2s
+
+#10 [builder 6/6] RUN python pwned_passwords_downloader.py 1000000
+client_loop: send disconnect: Broken pipe
+Failed to set up Docker container on remote server. Exiting.
+Cleaning up space on remote server...
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Total reclaimed space: 0B
+Total reclaimed space: 0B
+Pulling Docker image...
+3.10-slim: Pulling from library/python
+Digest: sha256:8666a639a54acc810408e505e2c6b46b50834385701675ee177f578b3d2fdef9
+Status: Image is up to date for python:3.10-slim
+docker.io/library/python:3.10-slim
+Saving Docker image to tar file...
+Downloading dependencies...
+Collecting aiohttp
+  File was already downloaded /home/linux/hipb-docker/dependencies/aiohttp-3.10.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+Collecting requests
+  File was already downloaded /home/linux/hipb-docker/dependencies/requests-2.32.3-py3-none-any.whl
+Collecting fastapi
+  File was already downloaded /home/linux/hipb-docker/dependencies/fastapi-0.112.0-py3-none-any.whl
+Collecting uvicorn
+  File was already downloaded /home/linux/hipb-docker/dependencies/uvicorn-0.30.6-py3-none-any.whl
+Collecting yarl<2.0,>=1.0
+  File was already downloaded /home/linux/hipb-docker/dependencies/yarl-1.9.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+Collecting multidict<7.0,>=4.5
+  File was already downloaded /home/linux/hipb-docker/dependencies/multidict-6.0.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+Collecting aiohappyeyeballs>=2.3.0
+  File was already downloaded /home/linux/hipb-docker/dependencies/aiohappyeyeballs-2.3.5-py3-none-any.whl
+Collecting async-timeout<5.0,>=4.0
+  File was already downloaded /home/linux/hipb-docker/dependencies/async_timeout-4.0.3-py3-none-any.whl
+Collecting frozenlist>=1.1.1
+  File was already downloaded /home/linux/hipb-docker/dependencies/frozenlist-1.4.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+Collecting attrs>=17.3.0
+  File was already downloaded /home/linux/hipb-docker/dependencies/attrs-24.2.0-py3-none-any.whl
+Collecting aiosignal>=1.1.2
+  File was already downloaded /home/linux/hipb-docker/dependencies/aiosignal-1.3.1-py3-none-any.whl
+Collecting charset-normalizer<4,>=2
+  File was already downloaded /home/linux/hipb-docker/dependencies/charset_normalizer-3.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+Collecting idna<4,>=2.5
+  File was already downloaded /home/linux/hipb-docker/dependencies/idna-3.7-py3-none-any.whl
+Collecting certifi>=2017.4.17
+  File was already downloaded /home/linux/hipb-docker/dependencies/certifi-2024.7.4-py3-none-any.whl
+Collecting urllib3<3,>=1.21.1
+  File was already downloaded /home/linux/hipb-docker/dependencies/urllib3-2.2.2-py3-none-any.whl
+Collecting starlette<0.38.0,>=0.37.2
+  File was already downloaded /home/linux/hipb-docker/dependencies/starlette-0.37.2-py3-none-any.whl
+Collecting pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4
+  File was already downloaded /home/linux/hipb-docker/dependencies/pydantic-2.8.2-py3-none-any.whl
+Collecting typing-extensions>=4.8.0
+  File was already downloaded /home/linux/hipb-docker/dependencies/typing_extensions-4.12.2-py3-none-any.whl
+Collecting h11>=0.8
+  File was already downloaded /home/linux/hipb-docker/dependencies/h11-0.14.0-py3-none-any.whl
+Collecting click>=7.0
+  File was already downloaded /home/linux/hipb-docker/dependencies/click-8.1.7-py3-none-any.whl
+Collecting pydantic-core==2.20.1
+  File was already downloaded /home/linux/hipb-docker/dependencies/pydantic_core-2.20.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+Collecting annotated-types>=0.4.0
+  File was already downloaded /home/linux/hipb-docker/dependencies/annotated_types-0.7.0-py3-none-any.whl
+Collecting anyio<5,>=3.4.0
+  File was already downloaded /home/linux/hipb-docker/dependencies/anyio-4.4.0-py3-none-any.whl
+Collecting sniffio>=1.1
+  File was already downloaded /home/linux/hipb-docker/dependencies/sniffio-1.3.1-py3-none-any.whl
+Collecting exceptiongroup>=1.0.2
+  File was already downloaded /home/linux/hipb-docker/dependencies/exceptiongroup-1.2.2-py3-none-any.whl
+Successfully downloaded aiohttp requests fastapi uvicorn aiohappyeyeballs aiosignal async-timeout attrs certifi charset-normalizer click frozenlist h11 idna multidict pydantic pydantic-core starlette typing-extensions urllib3 yarl annotated-types anyio exceptiongroup sniffio
+Creating tarball of dependencies and scripts...
+dependencies/
+dependencies/attrs-24.2.0-py3-none-any.whl
+dependencies/idna-3.7-py3-none-any.whl
+dependencies/aiohttp-3.10.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/multidict-6.0.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/sniffio-1.3.1-py3-none-any.whl
+dependencies/pydantic-2.8.2-py3-none-any.whl
+dependencies/uvicorn-0.30.5-py3-none-any.whl
+dependencies/yarl-1.9.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/annotated_types-0.7.0-py3-none-any.whl
+dependencies/h11-0.14.0-py3-none-any.whl
+dependencies/starlette-0.37.2-py3-none-any.whl
+dependencies/typing_extensions-4.12.2-py3-none-any.whl
+dependencies/click-8.1.7-py3-none-any.whl
+dependencies/pydantic_core-2.20.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/charset_normalizer-3.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/aiohttp-3.10.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/certifi-2024.7.4-py3-none-any.whl
+dependencies/anyio-4.4.0-py3-none-any.whl
+dependencies/exceptiongroup-1.2.2-py3-none-any.whl
+dependencies/attrs-24.1.0-py3-none-any.whl
+dependencies/aiohappyeyeballs-2.3.5-py3-none-any.whl
+dependencies/uvicorn-0.30.6-py3-none-any.whl
+dependencies/frozenlist-1.4.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/aiohappyeyeballs-2.3.4-py3-none-any.whl
+dependencies/fastapi-0.112.0-py3-none-any.whl
+dependencies/aiosignal-1.3.1-py3-none-any.whl
+dependencies/urllib3-2.2.2-py3-none-any.whl
+dependencies/async_timeout-4.0.3-py3-none-any.whl
+dependencies/requests-2.32.3-py3-none-any.whl
+pwned_passwords_downloader.py
+service.py
+Dockerfile.remote
+python-3.10-slim.tar
+Transferring files to remote server...
+Connecting to remote server and setting up Docker container...
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+dependencies/
+dependencies/attrs-24.2.0-py3-none-any.whl
+dependencies/idna-3.7-py3-none-any.whl
+dependencies/aiohttp-3.10.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/multidict-6.0.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/sniffio-1.3.1-py3-none-any.whl
+dependencies/pydantic-2.8.2-py3-none-any.whl
+dependencies/uvicorn-0.30.5-py3-none-any.whl
+dependencies/yarl-1.9.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/annotated_types-0.7.0-py3-none-any.whl
+dependencies/h11-0.14.0-py3-none-any.whl
+dependencies/starlette-0.37.2-py3-none-any.whl
+dependencies/typing_extensions-4.12.2-py3-none-any.whl
+dependencies/click-8.1.7-py3-none-any.whl
+dependencies/pydantic_core-2.20.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/charset_normalizer-3.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/aiohttp-3.10.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/certifi-2024.7.4-py3-none-any.whl
+dependencies/anyio-4.4.0-py3-none-any.whl
+dependencies/exceptiongroup-1.2.2-py3-none-any.whl
+dependencies/attrs-24.1.0-py3-none-any.whl
+dependencies/aiohappyeyeballs-2.3.5-py3-none-any.whl
+dependencies/uvicorn-0.30.6-py3-none-any.whl
+dependencies/frozenlist-1.4.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+dependencies/aiohappyeyeballs-2.3.4-py3-none-any.whl
+dependencies/fastapi-0.112.0-py3-none-any.whl
+dependencies/aiosignal-1.3.1-py3-none-any.whl
+dependencies/urllib3-2.2.2-py3-none-any.whl
+dependencies/async_timeout-4.0.3-py3-none-any.whl
+dependencies/requests-2.32.3-py3-none-any.whl
+pwned_passwords_downloader.py
+service.py
+Dockerfile.remote
+python-3.10-slim.tar
+Loaded image: python:3.10-slim
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.remote
+#1 transferring dockerfile: 907B done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/python:3.10-slim
+#2 DONE 0.0s
+
+#3 [builder 1/6] FROM docker.io/library/python:3.10-slim
+#3 DONE 0.0s
+
+#4 [builder 2/6] WORKDIR /app
+#4 DONE 0.1s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.1s
+
+#6 [internal] load build context
+#6 transferring context: 6.97MB 0.1s done
+#6 DONE 0.1s
+
+#7 [builder 3/6] COPY dependencies /app/dependencies
+#7 DONE 0.1s
+
+#8 [builder 3/6] COPY dependencies /app/dependencies
+#8 CACHED
+
+#9 [builder 4/6] COPY pwned_passwords_downloader.py service.py ./
+#9 DONE 0.2s
+
+#10 [builder 5/6] RUN pip install --no-index --find-links=dependencies aiohttp requests fastapi uvicorn
+#10 3.494 Looking in links: dependencies
+#10 3.518 Processing ./dependencies/aiohttp-3.10.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+#10 3.547 Processing ./dependencies/requests-2.32.3-py3-none-any.whl
+#10 3.564 Processing ./dependencies/fastapi-0.112.0-py3-none-any.whl
+#10 3.579 Processing ./dependencies/uvicorn-0.30.6-py3-none-any.whl
+#10 3.611 Processing ./dependencies/aiohappyeyeballs-2.3.5-py3-none-any.whl
+#10 3.626 Processing ./dependencies/yarl-1.9.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+#10 3.645 Processing ./dependencies/frozenlist-1.4.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+#10 3.663 Processing ./dependencies/aiosignal-1.3.1-py3-none-any.whl
+#10 3.678 Processing ./dependencies/attrs-24.2.0-py3-none-any.whl
+#10 3.693 Processing ./dependencies/multidict-6.0.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+#10 3.710 Processing ./dependencies/async_timeout-4.0.3-py3-none-any.whl
+#10 3.733 Processing ./dependencies/charset_normalizer-3.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+#10 3.750 Processing ./dependencies/urllib3-2.2.2-py3-none-any.whl
+#10 3.766 Processing ./dependencies/certifi-2024.7.4-py3-none-any.whl
+#10 3.781 Processing ./dependencies/idna-3.7-py3-none-any.whl
+#10 3.821 Processing ./dependencies/starlette-0.37.2-py3-none-any.whl
+#10 3.837 Processing ./dependencies/typing_extensions-4.12.2-py3-none-any.whl
+#10 3.852 Processing ./dependencies/pydantic-2.8.2-py3-none-any.whl
+#10 3.887 Processing ./dependencies/h11-0.14.0-py3-none-any.whl
+#10 3.902 Processing ./dependencies/click-8.1.7-py3-none-any.whl
+#10 4.010 Processing ./dependencies/annotated_types-0.7.0-py3-none-any.whl
+#10 4.024 Processing ./dependencies/pydantic_core-2.20.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+#10 4.065 Processing ./dependencies/anyio-4.4.0-py3-none-any.whl
+#10 4.131 Processing ./dependencies/exceptiongroup-1.2.2-py3-none-any.whl
+#10 4.147 Processing ./dependencies/sniffio-1.3.1-py3-none-any.whl
+#10 4.425 Installing collected packages: urllib3, typing-extensions, sniffio, multidict, idna, h11, frozenlist, exceptiongroup, click, charset-normalizer, certifi, attrs, async-timeout, annotated-types, aiohappyeyeballs, yarl, uvicorn, requests, pydantic-core, anyio, aiosignal, starlette, pydantic, aiohttp, fastapi
+#10 6.173 Successfully installed aiohappyeyeballs-2.3.5 aiohttp-3.10.3 aiosignal-1.3.1 annotated-types-0.7.0 anyio-4.4.0 async-timeout-4.0.3 attrs-24.2.0 certifi-2024.7.4 charset-normalizer-3.3.2 click-8.1.7 exceptiongroup-1.2.2 fastapi-0.112.0 frozenlist-1.4.1 h11-0.14.0 idna-3.7 multidict-6.0.5 pydantic-2.8.2 pydantic-core-2.20.1 requests-2.32.3 sniffio-1.3.1 starlette-0.37.2 typing-extensions-4.12.2 urllib3-2.2.2 uvicorn-0.30.6 yarl-1.9.4
+#10 6.174 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#10 DONE 6.5s
+
+#11 [builder 6/6] RUN python pwned_passwords_downloader.py 1000000
+Building Docker image for full...
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 826B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.10-slim
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [builder 1/5] FROM docker.io/library/python:3.10-slim
+#4 DONE 0.0s
+
+#5 [builder 2/5] WORKDIR /app
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 81B done
+#6 DONE 0.0s
+
+#7 [builder 3/5] COPY pwned_passwords_downloader.py service.py ./
+#7 CACHED
+
+#8 [builder 4/5] RUN --network=host pip install aiohttp requests fastapi uvicorn
+#8 CACHED
+
+#9 [builder 5/5] RUN python pwned_passwords_downloader.py 1000000
+#9 7552.3 Error fetching 040ae: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 092fb: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 0adcb: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 0afc5: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 0b4c1: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 0b8bd: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 0c661: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 0c920: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 0d235: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 0f933: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 1034a: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 11600: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 13113: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 1368b: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 14520: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 148b7: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 1633d: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 17185: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 1757c: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 17825: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 1958f: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 1ac20: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 1cf82: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 1f040: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 1f593: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 207a8: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 2480c: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 256c8: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 2a0fa: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 2caed: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 2cfb3: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 2cfb0: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 2f437: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 302eb: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 37367: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 3e0fe: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 3e3a8: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 403d8: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 41134: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 414bd: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 4175d: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 42856: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 44db4: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 47a7b: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 492c3: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 4a77e: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 4bb2b: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 4bb22: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 4bb29: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 4bb2c: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 4bb2e: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 4bb30: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 4bb1f: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 4bb2d: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 4bb2a: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 4bb31: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 5059d: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 5247b: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 55cf3: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 56f53: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 5a858: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 5aaba: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 5b757: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 5f338: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 5f401: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 60001: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 6161c: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 63ad1: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 6638f: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 6b0ee: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 6b30b: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 73fce: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 79574: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 79a34: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 7a47c: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 7cee0: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 7f29d: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 7f8fb: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 80ce5: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 85a90: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 7552.3 Error fetching 861cd: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+client_loop: send disconnect: Broken pipe
+Failed to set up Docker container on remote server. Exiting.
+#9 13006.6 Error fetching 87f4a: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching 882e8: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching 882a4: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching 88736: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching 88f5c: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching 8b231: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching 8b55a: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching 8d4f9: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching 90961: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching 94cd2: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching 993b8: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching adf7f: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching b17a4: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching b3333: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching b404a: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching ba0ae: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching c5cd4: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching c6d75: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching c6d9a: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching c88c8: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching cc9bf: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching d0e07: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching d2784: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching d8328: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching e39c2: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching e71fb: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching eb129: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 13006.6 Error fetching ee96b: HTTPSConnectionPool(host='api.pwnedpasswords.com', port=443): Read timed out.
+#9 DONE 13006.6s
+
+#10 [stage-1 3/4] COPY --from=builder /app /app
+#10 DONE 392.5s
+
+#11 [stage-1 4/4] RUN --network=host pip install fastapi uvicorn
+#11 1.838 Collecting fastapi
+#11 2.027   Downloading fastapi-0.112.0-py3-none-any.whl (93 kB)
+#11 2.093      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 93.1/93.1 kB 1.4 MB/s eta 0:00:00
+#11 2.220 Collecting uvicorn
+#11 2.258   Downloading uvicorn-0.30.6-py3-none-any.whl (62 kB)
+#11 2.285      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.8/62.8 kB 2.5 MB/s eta 0:00:00
+#11 2.411 Collecting typing-extensions>=4.8.0
+#11 2.453   Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+#11 2.853 Collecting pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4
+#11 2.892   Downloading pydantic-2.8.2-py3-none-any.whl (423 kB)
+#11 3.085      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 423.9/423.9 kB 2.3 MB/s eta 0:00:00
+#11 3.205 Collecting starlette<0.38.0,>=0.37.2
+#11 3.245   Downloading starlette-0.37.2-py3-none-any.whl (71 kB)
+#11 3.277      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.9/71.9 kB 2.4 MB/s eta 0:00:00
+#11 3.385 Collecting h11>=0.8
+#11 3.424   Downloading h11-0.14.0-py3-none-any.whl (58 kB)
+#11 3.454      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.3/58.3 kB 1.9 MB/s eta 0:00:00
+#11 3.570 Collecting click>=7.0
+#11 3.608   Downloading click-8.1.7-py3-none-any.whl (97 kB)
+#11 3.649      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 97.9/97.9 kB 2.5 MB/s eta 0:00:00
+#11 3.754 Collecting annotated-types>=0.4.0
+#11 3.794   Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+#11 5.351 Collecting pydantic-core==2.20.1
+#11 5.393   Downloading pydantic_core-2.20.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+#11 6.249      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 2.4 MB/s eta 0:00:00
+#11 6.376 Collecting anyio<5,>=3.4.0
+#11 6.417   Downloading anyio-4.4.0-py3-none-any.whl (86 kB)
+#11 6.457      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 86.8/86.8 kB 2.2 MB/s eta 0:00:00
+#11 6.576 Collecting exceptiongroup>=1.0.2
+#11 6.615   Downloading exceptiongroup-1.2.2-py3-none-any.whl (16 kB)
+#11 6.736 Collecting idna>=2.8
+#11 6.776   Downloading idna-3.7-py3-none-any.whl (66 kB)
+#11 6.806      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.8/66.8 kB 2.3 MB/s eta 0:00:00
+#11 6.898 Collecting sniffio>=1.1
+#11 6.937   Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+#11 7.057 Installing collected packages: typing-extensions, sniffio, idna, h11, exceptiongroup, click, annotated-types, uvicorn, pydantic-core, anyio, starlette, pydantic, fastapi
+#11 7.678 Successfully installed annotated-types-0.7.0 anyio-4.4.0 click-8.1.7 exceptiongroup-1.2.2 fastapi-0.112.0 h11-0.14.0 idna-3.7 pydantic-2.8.2 pydantic-core-2.20.1 sniffio-1.3.1 starlette-0.37.2 typing-extensions-4.12.2 uvicorn-0.30.6
+#11 7.678 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#11 8.020 
+#11 8.020 [notice] A new release of pip is available: 23.0.1 -> 24.2
+#11 8.020 [notice] To update, run: pip install --upgrade pip
+#11 DONE 10.1s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 302.0s done
+#12 writing image sha256:984caa8cdfb7e073aece666bb540cd03648aa966cd9a0dd4cce57c85f3e82ce7 done
+#12 naming to docker.io/library/pwnedpasswords:full done
+#12 DONE 302.0s
+Stopping and removing existing container...
+pwnedpasswords
+pwnedpasswords
+Running Docker container...
+f8a4447f67bbb8fb4fec56da2e0c4d35ef677e9a67fcd7372460129d3d85e34a
+Checking container status...
+Docker container is running. Access it at http://localhost:8000

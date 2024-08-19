@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pwned Password Checker - 密码泄露检查</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha1.min.js"></script>
+    <script>
+        // 使用 jsSHA 库计算 SHA1 哈希值
+        function sha1(str) {
+            const shaObj = new jsSHA("SHA-1", "TEXT");
+            shaObj.update(str);
+            return shaObj.getHash("HEX");
+        }
+
+        // 处理表单提交
+        async function checkPassword(event) {
+            event.preventDefault();
+
+            const password = document.getElementById('password').value;
+            if (!password) {
+                alert('请输入密码 / Please enter a password');
+                return;
+            }
+
+            try {
+                const sha1Hash = sha1(password);
+                const prefix = sha1Hash.substring(0, 5).toUpperCase();
+                const suffix = sha1Hash.substring(5).toUpperCase();
+
+                // 显示过程信息
+                document.getElementById('process').textContent = `SHA1 哈希值 / SHA1 Hash: ${sha1Hash}`;
+                document.getElementById('process').textContent += `\n哈希前五位 / First 5 Characters: ${prefix}`;
+
+                const startTime = performance.now();
+                const response = await fetch(`/range/${prefix}`);
+                const endTime = performance.now();
+                const timeTaken = (endTime - startTime).toFixed(2);
+
+                document.getElementById('process').textContent += `\n请求时间 / Request Time: ${timeTaken} ms`;
+
+                if (response.ok) {
+                    const text = await response.text();
+                    const lines = text.split('\n');
+                    const matchedLine = lines.find(line => line.startsWith(suffix));
+                    if (matchedLine) {
+                        const count = matchedLine.split(':')[1];
+                        document.getElementById('result').textContent = `这个密码已被泄露 ${count} 次 / This password has been breached ${count} times.`;
+                    } else {
+                        document.getElementById('result').textContent = '这个密码没有被泄露 / This password has not been breached.';
+                    }
+                } else {
+                    document.getElementById('result').textContent = '无法获取泄露数据，请稍后重试 / Unable to fetch breach data, please try again later.';
+                }
+            } catch (error) {
+                document.getElementById('result').textContent = `错误 / Error: ${error.message}`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Pwned Password Checker - 密码泄露检查</h1>
+    <form onsubmit="checkPassword(event)">
+        <label for="password">输入密码 / Enter Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">检查密码 / Check Password</button>
+    </form>
+
+    <h2>处理过程 / Processing:</h2>
+    <pre id="process"></pre>
+
+    <h2>结果 / Result:</h2>
+    <p id="result"></p>
+</body>
+</html>

@@ -1,0 +1,17 @@
+Cleaning up space on remote server...
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Error response from daemon: No such container: pwnedpasswords_service
+Error response from daemon: No such container: pwnedpasswords_service
+Total reclaimed space: 0B
+Total reclaimed space: 0B
+Saving Docker image to tar file...
+Transferring Docker image to remote server...
+Connecting to remote server and setting up Docker container...
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Loaded image: pwnedpasswords:live
+pwnedpasswords_responses
+Error response from daemon: No such container: pwnedpasswords_service
+Error response from daemon: No such container: pwnedpasswords_service
+5d8a79ffcebdb88d7de2bd23ebbc9a8ba80ae63fd4a86ce9f03412c01e60f642
+Cleaning up...
+Deployment completed successfully.
