@@ -6,7 +6,7 @@ on:
       - main  # 仅在推送到main分支时触发构建
 
 jobs:
-  build-test:
+  build-live:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,14 +22,12 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build and push Docker image for test
+    - name: Build and push Docker image for live
       uses: docker/build-push-action@v2
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/pwnedpasswords:100test
-        build-args: |
-          LIMIT=100
+        tags: ${{ secrets.DOCKER_USERNAME }}/pwnedpasswords:live
 
     - name: Log out from Docker Hub
       run: docker logout
